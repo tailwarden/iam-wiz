@@ -37,7 +37,7 @@ Usage
 Once you've installed IAMWiz, you can start generating IAM policies by providing a prompt. Here's how to use the tool:
 
 
-- Create a policy that allows read-only access to all S3 buckets.
+- Create a policy that allows a Lambda function to insert items to a movies table and store the event logs in CloudWatch
 ```json
 {
   "Version": "2012-10-17",
@@ -45,11 +45,7 @@ Once you've installed IAMWiz, you can start generating IAM policies by providing
     {
       "Effect": "Allow",
       "Action": [
-        "dynamodb:PutItem",
-        "dynamodb:UpdateItem",
-        "dynamodb:DeleteItem",
-        "dynamodb:BatchWriteItem",
-        "dynamodb:BatchGetItem"
+        "dynamodb:PutItem"
       ],
       "Resource": "arn:aws:dynamodb:REGION:ACCOUNT_ID:table/movies"
     },
